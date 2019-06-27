@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "989579249565",
+    "firebase_url": "https://menuapp-66366.firebaseio.com",
+    "project_id": "menuapp-66366",
+    "storage_bucket": "menuapp-66366.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:989579249565:android:40f3dfe3d2c47b59",
+        "android_client_info": {
+          "package_name": "com.example.resturantmenuapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "989579249565-77kevgm4emkrhutp3g09b71cq22gk44m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.resturantmenuapp",
+            "certificate_hash": "675a661cc3895206256330173045bbe1f459b828"
+          }
+        },
+        {
+          "client_id": "989579249565-p74veak15h3dj6ur5n0d36ohk9oetqeq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKYoL_HauYRpAtLTa5AewNWOpiiY7xayA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "989579249565-p74veak15h3dj6ur5n0d36ohk9oetqeq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
