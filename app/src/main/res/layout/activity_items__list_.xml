@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Items_List_Activity">
+
+    <HorizontalScrollView
+        android:id="@+id/ho_id"
+        android:layout_width="match_parent"
+        android:layout_height="517dp">
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout_gridtableLayout"
+                android:layout_width="900dp"
+                android:layout_height="200dp"
+                android:orientation="vertical">
+
+                <GridView
+                    android:id="@+id/Items_GridView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:baselineAligned="false"
+                    android:columnWidth="100dp"
+                    android:gravity="center"
+                    android:horizontalSpacing="1dp"
+                    android:numColumns="auto_fit"
+                    android:scrollbarAlwaysDrawHorizontalTrack="true"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                    android:scrollbars="horizontal"
+                    android:stretchMode="none"
+                    android:verticalSpacing="1dp">
+
+                </GridView>
+
+
+            </LinearLayout>
+        </FrameLayout>
+    </HorizontalScrollView>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/Recycler_list_Categories"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/ho_id"
+        android:layout_marginTop="-85dp"
+        android:layout_marginBottom="0dp"
+        android:orientation="horizontal">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

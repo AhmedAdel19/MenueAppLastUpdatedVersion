@@ -28,6 +28,7 @@ public class Add_Category extends AppCompatActivity
     private EditText Category_Name;
     private Button Category_Icon;
     private Button Save_Category;
+    private Button Items_Intent;
     private ImageView Icon_View;
     final int REQUEST_CODE_GALLERY = 999;
 
@@ -80,6 +81,17 @@ public class Add_Category extends AppCompatActivity
                 }
 
 
+            }
+        });
+
+        Items_Intent = findViewById(R.id.ItemsActivity);
+        Items_Intent.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent GoToItemsActivity = new Intent(Add_Category.this , Add_Item_Category.class );
+                startActivity(GoToItemsActivity);
             }
         });
     }

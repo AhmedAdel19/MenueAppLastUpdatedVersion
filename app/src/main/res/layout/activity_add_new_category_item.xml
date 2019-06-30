@@ -48,14 +48,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="250dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select Category Icon"
-            android:textColor="#000"
-            android:fontFamily="casual"
-            android:textSize="16dp"
-            android:layout_gravity="center"/>
 
         <ImageButton
             android:id="@+id/ItemCategorySelectImage"

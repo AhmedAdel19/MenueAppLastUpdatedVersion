@@ -66,4 +66,16 @@
         android:textSize="18dp"
         android:textColor="#000"/>
 
+    <Button
+        android:id="@+id/ItemsActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="490dp"
+        android:text="Save Category"
+        android:background="#ddd"
+        android:fontFamily="casual"
+        android:textSize="18dp"
+        android:textColor="#000"/>
+
 </RelativeLayout>

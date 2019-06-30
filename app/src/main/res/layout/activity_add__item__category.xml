@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.resturantmenuapp.Add_Item_Category">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Category of new Item"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"
+        android:fontFamily="casual"
+        android:textSize="17dp"
+        android:layout_gravity="center"/>
+
+    <Spinner
+        android:id="@+id/sp_category"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:paddingLeft="140dp"
+        android:paddingRight="50dp"
+        android:background="@null"
+        android:prompt="@string/choose_category_type">
+
+    </Spinner>
+
+    <EditText
+        android:id="@+id/AddCategory_Item_NameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:hint="Add Item Name"
+        android:layout_alignParentTop="true"
+        android:fontFamily="casual"
+        android:layout_marginTop="60dp"/>
+
+    <EditText
+        android:id="@+id/AddCategory_Item_PriceText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:hint="Add Item Price"
+        android:layout_alignParentTop="true"
+        android:fontFamily="casual"
+        android:layout_marginTop="130dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="200dp">
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Select Category Icon"-->
+        <!--android:textColor="#000"-->
+        <!--android:fontFamily="casual"-->
+        <!--android:textSize="16dp"-->
+        <!--android:layout_gravity="center"/>-->
+
+        <Button
+            android:id="@+id/ItemSelectIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Select Item Icon"
+            android:fontFamily="casual"
+            android:background="#ddd" />
+
+        <ImageView
+            android:id="@+id/ItemIconView"
+            android:layout_width="130dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:src="@mipmap/ic_launcher"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/SaveItemBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="460dp"
+        android:text="Save Category"
+        android:background="#ddd"
+        android:fontFamily="casual"
+        android:textSize="18dp"
+        android:textColor="#000"/>
+
+</RelativeLayout>

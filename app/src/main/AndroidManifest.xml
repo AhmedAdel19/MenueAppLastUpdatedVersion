@@ -18,7 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".Add_Item_Category"></activity>
+        <activity android:name=".Items_List_Activity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".AddCategoryActivity" />
         <activity android:name=".AddNewCategoryItem" />
         <activity android:name=".Add_Category">

@@ -36,6 +36,22 @@ public class sqliteHelper extends SQLiteOpenHelper
 
     }
 
+
+    public void inserNewItemCategorytData(String name , String price  , byte [] image , int Item_Fk)
+    {
+        SQLiteDatabase database = getWritableDatabase();
+        String sql = "INSERT INTO CATEGORY_ITEMS VALUES (NULL , ? , ? , ? ,  "+Item_Fk+" ) ";
+
+        SQLiteStatement statement = database.compileStatement(sql);
+        statement.clearBindings();
+
+        statement.bindString(1 , name);
+        statement.bindString(2, price);
+        statement.bindBlob(3 , image);
+        statement.executeInsert();
+
+    }
+
     public Cursor getData(String sql)
     {
         SQLiteDatabase database = getReadableDatabase();
