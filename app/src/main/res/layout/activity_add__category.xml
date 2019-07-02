@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ddd"
     tools:context="com.example.resturantmenuapp.Add_Category">
 
     <EditText
@@ -15,6 +16,7 @@
         android:hint="Add Category Name"
         android:layout_alignParentTop="true"
         android:fontFamily="casual"
+        android:textColor="#000"
         android:layout_marginTop="60dp"/>
 
 
@@ -36,12 +38,15 @@
 
         <Button
             android:id="@+id/CategorySelectIcon"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Select Category Icon"
             android:fontFamily="casual"
-            android:background="#ddd" />
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:background="@drawable/inputs_delete" />
 
         <ImageView
             android:id="@+id/CategoryIconView"
@@ -56,26 +61,18 @@
 
     <Button
         android:id="@+id/SaveCategoryBtn"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="420dp"
         android:text="Save Category"
-        android:background="#ddd"
+        android:background="@drawable/inputs_delete"
         android:fontFamily="casual"
         android:textSize="18dp"
-        android:textColor="#000"/>
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="#fff"/>
 
-    <Button
-        android:id="@+id/ItemsActivity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="490dp"
-        android:text="Save Category"
-        android:background="#ddd"
-        android:fontFamily="casual"
-        android:textSize="18dp"
-        android:textColor="#000"/>
+
 
 </RelativeLayout>

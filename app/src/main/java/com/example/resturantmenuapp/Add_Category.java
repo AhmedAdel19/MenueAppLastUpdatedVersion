@@ -1,7 +1,9 @@
 package com.example.resturantmenuapp;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,6 +14,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,9 +31,10 @@ public class Add_Category extends AppCompatActivity
     private EditText Category_Name;
     private Button Category_Icon;
     private Button Save_Category;
-    private Button Items_Intent;
     private ImageView Icon_View;
     final int REQUEST_CODE_GALLERY = 999;
+    private ProgressDialog loadingBar;
+
 
     public  static sqliteHelper sqlHelper;
 
@@ -39,6 +43,8 @@ public class Add_Category extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__category);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
 
         init();
 
@@ -64,36 +70,62 @@ public class Add_Category extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                try
+                String Category_Name_text , Category_icon_text;
+                Category_Name_text = Category_Name.getText().toString();
+                Category_icon_text = Icon_View.toString();
+
+                if(TextUtils.isEmpty(Category_Name_text))
                 {
-                    sqlHelper.inserNewCategorytData
-                            (
-                                    Category_Name.getText().toString().trim(),
-                                    imageViewToByte(Icon_View)
-                            );
-                    Toast.makeText(Add_Category.this, "Category Added Successfully", Toast.LENGTH_SHORT).show();
-                    Category_Name.setText("");
-                    Icon_View.setImageResource(R.mipmap.ic_launcher);
+                    Toast.makeText(Add_Category.this, "please enter Category name before saving it !", Toast.LENGTH_SHORT).show();
                 }
-                catch (Exception e)
+                else if(TextUtils.isEmpty(Category_icon_text))
                 {
-                    e.printStackTrace();
+                    Toast.makeText(Add_Category.this, "please select Category Icon before saving it !", Toast.LENGTH_SHORT).show();
+
                 }
+                else
+                {
+                    loadingBar.setTitle("complete Category setup");
+                    loadingBar.setMessage("please wait until Creating Category setup complete...");
+                    loadingBar.show();
+                    loadingBar.setCanceledOnTouchOutside(true);
+
+                    try
+                    {
+                        sqlHelper.inserNewCategorytData
+                                (
+                                        Category_Name.getText().toString().trim(),
+                                        imageViewToByte(Icon_View)
+                                );
+                        loadingBar.dismiss();
+
+                        Toast.makeText(Add_Category.this, "Category Added Successfully", Toast.LENGTH_SHORT).show();
+                        Category_Name.setText("");
+                        Icon_View.setImageResource(R.mipmap.ic_launcher);
+                    }
+                    catch (Exception e)
+                    {
+                        loadingBar.dismiss();
+                        e.printStackTrace();
+                    }
+
+                }
+
 
 
             }
         });
 
-        Items_Intent = findViewById(R.id.ItemsActivity);
-        Items_Intent.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Intent GoToItemsActivity = new Intent(Add_Category.this , Add_Item_Category.class );
-                startActivity(GoToItemsActivity);
-            }
-        });
+//        Items_Intent = findViewById(R.id.ItemsActivity);
+//        Items_Intent.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View v)
+//            {
+//                Intent GoToItemsActivity = new Intent(Add_Category.this , Add_Item_Category.class );
+//                startActivity(GoToItemsActivity);
+//            }
+//        });
     }
 
     private byte[] imageViewToByte(ImageView image)
@@ -149,6 +181,7 @@ public class Add_Category extends AppCompatActivity
 
     public void init()
     {
+        loadingBar = new ProgressDialog(this);
         Category_Name = findViewById(R.id.AddCategoryNameText);
         Category_Icon = findViewById(R.id.CategorySelectIcon);
         Save_Category = findViewById(R.id.SaveCategoryBtn);

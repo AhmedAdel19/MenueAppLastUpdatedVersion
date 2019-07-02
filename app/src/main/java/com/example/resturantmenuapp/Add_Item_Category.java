@@ -1,7 +1,9 @@
 package com.example.resturantmenuapp;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -13,6 +15,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -44,6 +47,8 @@ public class Add_Item_Category extends AppCompatActivity
 
     ArrayList<byte []> Category_Images_List;
     private int selected_Category_id;
+    private ProgressDialog loadingBar;
+
 
     public  static sqliteHelper sqlHelper;
 
@@ -52,6 +57,8 @@ public class Add_Item_Category extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__item__category);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
 
         Category_List = new ArrayList<>();
         Categor_Names_List = new ArrayList<>();
@@ -96,21 +103,30 @@ public class Add_Item_Category extends AppCompatActivity
 
         sqlHelper = new sqliteHelper(this , "MenueDB.sqlite" , null ,1);
 
-        Cursor categoryCursor = sqlHelper.getData("SELECT * FROM CATEGORIES");
-        Category_List.clear();
-        if (categoryCursor.moveToFirst()) {
-            do{
-                int cat_id = categoryCursor.getInt(0);
-                String cat_name = categoryCursor.getString(1);
-                Toast.makeText(this,cat_name, Toast.LENGTH_SHORT).show();
-                byte[] cat_icon = categoryCursor.getBlob(2);
-                Category_List.add(new Category(cat_id, cat_name, cat_icon));
-                Categor_Names_List.add(cat_name);
-                Category_Images_List.add(cat_icon);
-                Categor_Ids_List.add(cat_id);
-            }while (categoryCursor.moveToNext());
+        try
+        {
+            Cursor categoryCursor = sqlHelper.getData("SELECT * FROM CATEGORIES");
+            Category_List.clear();
+            if (categoryCursor.moveToFirst()) {
+                do{
+                    int cat_id = categoryCursor.getInt(0);
+                    String cat_name = categoryCursor.getString(1);
+                    Toast.makeText(this,cat_name, Toast.LENGTH_SHORT).show();
+                    byte[] cat_icon = categoryCursor.getBlob(2);
+                    Category_List.add(new Category(cat_id, cat_name, cat_icon));
+                    Categor_Names_List.add(cat_name);
+                    Category_Images_List.add(cat_icon);
+                    Categor_Ids_List.add(cat_id);
+                }while (categoryCursor.moveToNext());
+            }
+            //----------------------------------------
         }
-        //----------------------------------------
+        catch (Exception e)
+        {
+
+        }
+
+
 
 
         sp_category_popup = findViewById(R.id.sp_category);
@@ -138,24 +154,51 @@ public class Add_Item_Category extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                try
-                {
-                    sqlHelper.inserNewItemCategorytData
-                            (
-                                    Category_Item_Name.getText().toString().trim(),
-                                    Category_Item_Price.getText().toString().trim(),
-                                    imageViewToByte(Item_Icon_View),
-                                    selected_Category_id
-                            );
-                    Toast.makeText(Add_Item_Category.this, "Item Added Successfully", Toast.LENGTH_SHORT).show();
-                    Category_Item_Name.setText("");
-                    Item_Icon_View.setImageResource(R.mipmap.ic_launcher);
-                }
-                catch (Exception e)
-                {
-                    e.printStackTrace();
-                }
+                String Item_Name_text , Item_Price_text , Item_icon_text;
+                Item_Name_text = Category_Item_Name.getText().toString();
+                Item_Price_text = Category_Item_Price.getText().toString();
+                Item_icon_text = Item_Icon_View.toString();
 
+                if(TextUtils.isEmpty(Item_Name_text))
+                {
+                    Toast.makeText(Add_Item_Category.this, "please enter item name before saving it !", Toast.LENGTH_SHORT).show();
+                }
+                else if(TextUtils.isEmpty(Item_Price_text))
+                {
+                    Toast.makeText(Add_Item_Category.this, "please enter item price before saving it !", Toast.LENGTH_SHORT).show();
+                }
+                else if(TextUtils.isEmpty(Item_icon_text))
+                {
+                    Toast.makeText(Add_Item_Category.this, "please select item Icon before saving it !", Toast.LENGTH_SHORT).show();
+
+                }
+                else
+                {
+                    loadingBar.setTitle("complete Add new Item setup");
+                    loadingBar.setMessage("please wait until Adding new Item setup complete...");
+                    loadingBar.show();
+                    loadingBar.setCanceledOnTouchOutside(true);
+
+                    try
+                    {
+                        sqlHelper.inserNewItemCategorytData
+                                (
+                                        Category_Item_Name.getText().toString().trim(),
+                                        Category_Item_Price.getText().toString().trim(),
+                                        imageViewToByte(Item_Icon_View),
+                                        selected_Category_id
+                                );
+                        loadingBar.dismiss();
+                        Toast.makeText(Add_Item_Category.this, "Item Added Successfully", Toast.LENGTH_SHORT).show();
+                        Category_Item_Name.setText("");
+                        Item_Icon_View.setImageResource(R.mipmap.ic_launcher);
+                    }
+                    catch (Exception e)
+                    {
+                        loadingBar.dismiss();
+                        e.printStackTrace();
+                    }
+                }
 
             }
         });
@@ -217,8 +260,9 @@ public class Add_Item_Category extends AppCompatActivity
 
     public void init()
     {
+        loadingBar = new ProgressDialog(this);
         Category_Item_Name = findViewById(R.id.AddCategory_Item_NameText);
-        Category_Item_Price = Category_Item_Name = findViewById(R.id.AddCategory_Item_PriceText);
+        Category_Item_Price = findViewById(R.id.AddCategory_Item_PriceText);
         Category_Item_Icon = findViewById(R.id.ItemSelectIcon);
         Save_Item_Category = findViewById(R.id.SaveItemBtn);
         Item_Icon_View = findViewById(R.id.ItemIconView);

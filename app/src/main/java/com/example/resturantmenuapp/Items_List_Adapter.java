@@ -62,7 +62,6 @@ public class Items_List_Adapter extends BaseAdapter
             row = inflater.inflate(layout , null);
 
             holder.ItemName = row.findViewById(R.id.one_item_name_view);
-            holder.ItemPrice = row.findViewById(R.id.one_item_price_view);
             holder.ItemImage = row.findViewById(R.id.one_item_view);
             row.setTag(holder);
 
@@ -74,7 +73,7 @@ public class Items_List_Adapter extends BaseAdapter
 
         Item item = ItemList.get(position);
         holder.ItemName.setText(item.getItem_Name());
-        holder.ItemPrice.setText(item.getItem_Price());
+        //holder.ItemPrice.setText(item.getItem_Price());
 
         byte [] ItemImage = item.getItem_Icon();
         Bitmap bitmap = BitmapFactory.decodeByteArray(ItemImage , 0 , ItemImage.length);

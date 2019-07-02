@@ -1,6 +1,7 @@
 package com.example.resturantmenuapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
@@ -8,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,20 +26,26 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     ArrayList<byte [] > Item_Images_Uris = new ArrayList<>();
     ArrayList<Category> CategoryList = new ArrayList<>();
     Context mContext;
+    private int layout;
 
-    public RecyclerViewAdapter(Context mContext, ArrayList<String> CategoryList_Names , ArrayList<byte []> CategoryList_Images)
+
+
+
+    public RecyclerViewAdapter(Context mContext,int layout  ,ArrayList<String> CategoryList_Names , ArrayList<byte []> CategoryList_Images)
     {
         // this.CategoryList = Category_List;
         this.Item_Names_List = CategoryList_Names;
         this.Item_Images_Uris = CategoryList_Images;
         this.mContext = mContext;
+        this.layout = layout;
+
     }
 
     @NonNull
     @Override
     public RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_list_item , parent , false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(layout , parent , false);
 
         MyViewHolder holder = new MyViewHolder(view);
 
@@ -50,24 +59,31 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 .asBitmap()
                 .load(Item_Images_Uris.get(position))
                 .into(holder.Item_Icon);
-      //  Category category = CategoryList.get(position);
+        //  Category category = CategoryList.get(position);
 
 //        byte [] CategoryImage = category.getCategory_Icon();
 //        Bitmap bitmap = BitmapFactory.decodeByteArray(CategoryImage , 0 , CategoryImage.length);
 //        holder.Item_Icon.setImageBitmap(bitmap);
 
         holder.Item_Name.setText(Item_Names_List.get(position));
-        
+
         holder.Item_Icon.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Toast.makeText(mContext, Item_Names_List.get(position), Toast.LENGTH_SHORT).show();
+
+                Intent ItemsIntent = new Intent(mContext , Items_List_Activity.class);
+                ItemsIntent.putExtra("Item_Position" , position);
+                mContext.startActivity(ItemsIntent);
 
             }
         });
+
+
     }
+
+
 
     @Override
     public int getItemCount()

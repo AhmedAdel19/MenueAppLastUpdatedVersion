@@ -19,14 +19,14 @@
 
     <Spinner
         android:id="@+id/sp_category"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="45dp"
         android:gravity="center"
-        android:paddingLeft="140dp"
-        android:paddingRight="50dp"
-        android:background="@null"
+        android:layout_centerHorizontal="true"
+        android:background="#fff"
+        android:autofillHints="Select Category"
         android:prompt="@string/choose_category_type">
 
     </Spinner>
@@ -40,7 +40,7 @@
         android:hint="Add Item Name"
         android:layout_alignParentTop="true"
         android:fontFamily="casual"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="95dp"/>
 
     <EditText
         android:id="@+id/AddCategory_Item_PriceText"
@@ -51,7 +51,7 @@
         android:hint="Add Item Price"
         android:layout_alignParentTop="true"
         android:fontFamily="casual"
-        android:layout_marginTop="130dp"/>
+        android:layout_marginTop="170dp"/>
 
 
     <LinearLayout
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="200dp">
+        android:layout_marginTop="255dp">
 
         <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
@@ -72,19 +72,22 @@
 
         <Button
             android:id="@+id/ItemSelectIcon"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Select Item Icon"
             android:fontFamily="casual"
-            android:background="#ddd" />
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:background="@drawable/inputs_delete" />
 
         <ImageView
             android:id="@+id/ItemIconView"
             android:layout_width="130dp"
             android:layout_height="120dp"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:src="@mipmap/ic_launcher"
             />
 
@@ -92,14 +95,16 @@
 
     <Button
         android:id="@+id/SaveItemBtn"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="460dp"
         android:text="Save Category"
-        android:background="#ddd"
+        android:background="@drawable/inputs_delete"
         android:fontFamily="casual"
-        android:textSize="18dp"
-        android:textColor="#000"/>
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#fff"/>
 
 </RelativeLayout>

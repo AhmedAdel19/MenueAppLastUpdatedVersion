@@ -18,12 +18,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Add_Item_Category"></activity>
-        <activity android:name=".Items_List_Activity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Show_All_Categries_Activity"/>
+        <activity android:name=".Manage_Menue_Activity" />
+        <activity android:name=".Activity_Grid_Item" />
+        <activity android:name=".Add_Item_Category" />
+        <activity android:name=".Add_Category" />
+         <activity android:name=".Items_List_Activity" />
         <activity android:name=".AddCategoryActivity" />
         <activity android:name=".AddNewCategoryItem" />
-        <activity android:name=".Add_Category">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />

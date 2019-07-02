@@ -4,33 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#ddd">
+    android:background="#ddd"
+    tools:context=".Manage_Menue_Activity">
 
 
     <Button
-        android:id="@+id/go_to_menue_btn"
+        android:id="@+id/go_to_add_category"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="252dp"
+        android:layout_marginTop="148dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/inputs_delete"
         android:fontFamily="casual"
         android:gravity="center"
-        android:text="Go To Menue"
+        android:text="Add New Category"
         android:textColor="#fff"
-        android:textStyle="bold"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.61"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button
-        android:id="@+id/go_to_settings_btn"
+        android:id="@+id/go_to_add_item"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
@@ -40,7 +41,7 @@
         android:layout_marginRight="8dp"
         android:fontFamily="casual"
         android:gravity="center"
-        android:text="Manage Menue"
+        android:text="Add New Item"
         android:background="@drawable/inputs_delete"
         android:textColor="#fff"
         android:textStyle="bold"
@@ -48,8 +49,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/go_to_menue_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/go_to_add_category" />
 
 
+    <Button
+        android:id="@+id/go_to_all_Categories"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="show all categories"
+        android:background="@drawable/inputs_delete"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/go_to_add_item" />
 
 </android.support.constraint.ConstraintLayout>
