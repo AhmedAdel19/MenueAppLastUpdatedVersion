@@ -1,6 +1,7 @@
 package com.example.resturantmenuapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -38,9 +39,9 @@ public class show_all_categories_Adapter extends RecyclerView.Adapter<show_all_c
     }
 
     @Override
-    public void onBindViewHolder(@NonNull show_all_categories_Adapter.MyViewHolder holder, int position)
+    public void onBindViewHolder(@NonNull show_all_categories_Adapter.MyViewHolder holder, final int position)
     {
-        Category category = CategoryList.get(position);
+        final Category category = CategoryList.get(position);
 
         Glide.with(mContext)
                 .asBitmap()
@@ -48,6 +49,18 @@ public class show_all_categories_Adapter extends RecyclerView.Adapter<show_all_c
                 .into(holder.Category_Icon);
 
         holder.Category_Name.setText(category.getCategory_name());
+
+        holder.Category_Name.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent category_obtions_intent = new Intent(mContext , Category_Options_Activity.class);
+                category_obtions_intent.putExtra("category_position" , position);
+                mContext.startActivity(category_obtions_intent);
+
+            }
+        });
 
     }
 

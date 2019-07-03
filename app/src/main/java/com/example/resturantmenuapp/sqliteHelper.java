@@ -21,6 +21,20 @@ public class sqliteHelper extends SQLiteOpenHelper
         database.execSQL(sql);
     }
 
+    public void deleteCategoryRecord(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete("CATEGORIES", "CategoryId" + " = ?",
+                new String[] { String.valueOf(id) });
+        db.close();
+    }
+
+    public void deleteItemRecord(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete("CATEGORY_ITEMS", "ItemId" + " = ?",
+                new String[] { String.valueOf(id) });
+        db.close();
+    }
+
     public void inserNewCategorytData(String name  , byte [] image)
     {
         SQLiteDatabase database = getWritableDatabase();

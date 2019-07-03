@@ -100,7 +100,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="460dp"
-        android:text="Save Category"
+        android:text="Save Item"
         android:background="@drawable/inputs_delete"
         android:fontFamily="casual"
         android:textSize="18sp"

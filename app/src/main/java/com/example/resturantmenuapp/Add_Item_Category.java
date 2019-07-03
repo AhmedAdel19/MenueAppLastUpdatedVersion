@@ -191,6 +191,7 @@ public class Add_Item_Category extends AppCompatActivity
                         loadingBar.dismiss();
                         Toast.makeText(Add_Item_Category.this, "Item Added Successfully", Toast.LENGTH_SHORT).show();
                         Category_Item_Name.setText("");
+                        Category_Item_Price.setText("");
                         Item_Icon_View.setImageResource(R.mipmap.ic_launcher);
                     }
                     catch (Exception e)

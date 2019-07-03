@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
+
 public class Activity_Grid_Item extends AppCompatActivity
 {
     private TextView Item_name_full , Item_price_full;
@@ -20,6 +22,8 @@ public class Activity_Grid_Item extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__grid__item);
+
+
 
         Item_name_full = findViewById(R.id.one_item_name_view_full);
         Item_price_full = findViewById(R.id.one_item_price_view_full);

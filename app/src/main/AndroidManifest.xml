@@ -13,19 +13,20 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/menue_image"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/menue_image_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Show_All_Categries_Activity"/>
+        <activity android:name=".Item_Options_Activity"></activity>
+        <activity android:name=".Show_All_Category_Items_Activity" />
+        <activity android:name=".Category_Options_Activity" />
+        <activity android:name=".Show_All_Categries_Activity" />
         <activity android:name=".Manage_Menue_Activity" />
         <activity android:name=".Activity_Grid_Item" />
         <activity android:name=".Add_Item_Category" />
         <activity android:name=".Add_Category" />
-         <activity android:name=".Items_List_Activity" />
-        <activity android:name=".AddCategoryActivity" />
-        <activity android:name=".AddNewCategoryItem" />
+        <activity android:name=".Items_List_Activity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
