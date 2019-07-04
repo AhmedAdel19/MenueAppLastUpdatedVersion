@@ -10,68 +10,91 @@
     <EditText
         android:id="@+id/AddCategoryNameText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:hint="Add Category Name"
+        android:layout_height="73dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
         android:fontFamily="casual"
-        android:textColor="#000"
-        android:layout_marginTop="60dp"/>
+        android:gravity="center"
+        android:hint="Add Category Name"
+        android:textColor="#000" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="150dp">
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="263dp"
+        android:layout_marginEnd="-7dp"
+        android:layout_marginRight="-7dp"
+        android:orientation="vertical">
 
         <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Select Category Icon"-->
-            <!--android:textColor="#000"-->
-            <!--android:fontFamily="casual"-->
-            <!--android:textSize="16dp"-->
-            <!--android:layout_gravity="center"/>-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Select Category Icon"-->
+        <!--android:textColor="#000"-->
+        <!--android:fontFamily="casual"-->
+        <!--android:textSize="16dp"-->
+        <!--android:layout_gravity="center"/>-->
 
         <Button
             android:id="@+id/CategorySelectIcon"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_width="400dp"
+            android:layout_height="60dp"
             android:layout_gravity="center"
-            android:text="Select Category Icon"
+            android:background="@drawable/inputs_delete"
             android:fontFamily="casual"
-            android:textStyle="bold"
+            android:text="Select Category Icon"
             android:textColor="#fff"
             android:textSize="18sp"
-            android:background="@drawable/inputs_delete" />
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/CategoryIconView"
-            android:layout_width="130dp"
-            android:layout_height="120dp"
+            android:layout_width="247dp"
+            android:layout_height="198dp"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:src="@mipmap/ic_launcher"
-            />
+            android:src="@mipmap/ic_launcher" />
 
     </LinearLayout>
 
     <Button
         android:id="@+id/SaveCategoryBtn"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="420dp"
-        android:text="Save Category"
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="103dp"
+        android:layout_marginLeft="103dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginRight="98dp"
+        android:layout_marginBottom="216dp"
         android:background="@drawable/inputs_delete"
         android:fontFamily="casual"
+        android:gravity="center"
+        android:text="Save Category"
+        android:textColor="#fff"
         android:textSize="18dp"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:textColor="#fff"/>
+        android:textStyle="bold" />
 
 
 

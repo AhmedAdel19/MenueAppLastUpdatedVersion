@@ -60,39 +60,42 @@
     <!--</HorizontalScrollView>-->
 
 
-
-
     <GridView
         android:id="@+id/Items_GridView"
-        android:layout_width="wrap_content"
-        android:layout_height="450dp"
+        android:layout_width="598dp"
+        android:layout_height="785dp"
         android:layout_margin="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:baselineAligned="false"
         android:horizontalSpacing="1dp"
         android:numColumns="2"
-        android:scrollbarAlwaysDrawHorizontalTrack="true"
         android:scrollbarAlwaysDrawVerticalTrack="true"
-        android:scrollbars="horizontal"
         android:verticalSpacing="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
-
-
-
-
-
-
 
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/Recycler_list_Categories"
-        android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_width="599dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:baselineAligned="false"
-        android:padding="0dp"
-        android:layout_marginBottom="0dp"
         android:orientation="horizontal"
+        android:padding="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Items_GridView"
+        app:layout_constraintVertical_bias="0.984"
         tools:ignore="MissingConstraints">
+
     </android.support.v7.widget.RecyclerView>
 
     <!--</LinearLayout>-->

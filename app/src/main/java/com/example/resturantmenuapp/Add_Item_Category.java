@@ -111,7 +111,7 @@ public class Add_Item_Category extends AppCompatActivity
                 do{
                     int cat_id = categoryCursor.getInt(0);
                     String cat_name = categoryCursor.getString(1);
-                    Toast.makeText(this,cat_name, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(this,cat_name, Toast.LENGTH_SHORT).show();
                     byte[] cat_icon = categoryCursor.getBlob(2);
                     Category_List.add(new Category(cat_id, cat_name, cat_icon));
                     Categor_Names_List.add(cat_name);

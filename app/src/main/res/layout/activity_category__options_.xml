@@ -9,11 +9,11 @@
 
     <Button
         android:id="@+id/show_categoey_items_btn"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_width="400dp"
+        android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="252dp"
+        android:layout_marginTop="352dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/inputs_delete"
@@ -21,17 +21,18 @@
         android:gravity="center"
         android:text="Show Category Items"
         android:textColor="#fff"
-        android:textStyle="bold"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button
         android:id="@+id/delete_category_btn"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_width="400dp"
+        android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="68dp"
